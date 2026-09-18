@@ -1,0 +1,85 @@
+# Sources for geosite rule-set merging.
+# Each entry is downloaded, decompiled, and merged into dist/geosite-merged.srs.
+# Add or remove entries freely — push to main and the CI will rebuild automatically.
+
+sources:
+  - name: category-porn
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-porn.srs
+
+  - name: modrinth
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/modrinth.srs
+
+  - name: linux
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/linux.srs
+
+  - name: supercell
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/supercell.srs
+
+  - name: anime
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/anime.srs
+
+  - name: apple
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs
+
+  - name: twitch
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitch.srs
+
+  - name: google-gemini
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-gemini.srs
+
+  - name: github
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs
+
+  - name: notion
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/notion.srs
+
+  - name: openai
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai.srs
+
+  - name: anthropic
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/anthropic.srs
+
+  - name: xai
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/xai.srs
+
+  - name: soundcloud
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/soundcloud.srs
+
+  - name: viber
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/viber.srs
+
+  - name: speedtest
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/speedtest.srs
+
+  - name: patreon
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/patreon.srs
+
+  - name: signal
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/signal.srs
+
+  - name: linkedin
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/linkedin.srs
+
+  - name: microsoft
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs
+
+  - name: protonmail
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/protonmail.srs
+
+  - name: ficbook
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/ficbook.srs
+
+  - name: habr
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/habr.srs
+
+  - name: rutracker
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/rutracker.srs
+
+  - name: elevenlabs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/elevenlabs.srs
+
+  - name: epicgames
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/epicgames.srs
+
+  - name: netflix
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs

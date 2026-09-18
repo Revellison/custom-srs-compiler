@@ -1,0 +1,73 @@
+# Sources for geoip rule-set merging (ASN-based subnet lists).
+# Each entry is downloaded, decompiled, and merged into dist/geoip-merged.srs.
+# Add or remove entries freely — push to main and the CI will rebuild automatically.
+
+sources:
+  - name: AS20940
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS20940.srs
+
+  - name: AS16625
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS16625.srs
+
+  - name: AS35994
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS35994.srs
+
+  - name: AS34164
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS34164.srs
+
+  - name: AS16509
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS16509.srs
+
+  - name: AS8987
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS8987.srs
+
+  - name: AS60068
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS60068.srs
+
+  - name: AS13335
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS13335.srs
+
+  - name: AS51167
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS51167.srs
+
+  - name: AS14061
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS14061.srs
+
+  - name: AS54113
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS54113.srs
+
+  - name: AS53667
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS53667.srs
+
+  - name: AS15169
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS15169.srs
+
+  - name: AS199524
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS199524.srs
+
+  - name: AS396982
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS396982.srs
+
+  - name: AS24940
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS24940.srs
+
+  - name: AS35624
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS35624.srs
+
+  - name: AS8075
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS8075.srs
+
+  - name: AS31898
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS31898.srs
+
+  - name: AS16276
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS16276.srs
+
+  - name: AS12876
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS12876.srs
+
+  - name: AS20473
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS20473.srs
+
+  - name: AS62041
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/asn/AS62041.srs
