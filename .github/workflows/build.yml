@@ -6,6 +6,7 @@ on:
     paths:
       - "sources/*.yaml"
       - "scripts/build.py"
+      - ".github/workflows/build.yml"
   schedule:
     # Every day at 04:00 UTC — pick up upstream .srs updates
     - cron: "0 4 * * *"
@@ -48,20 +49,25 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet dist/; then
+          git add dist/
+          if git diff --cached --quiet dist/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No changes in dist/ — skipping commit."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Generate release tag
+        if: steps.changes.outputs.changed == 'true'
+        id: tag
+        run: echo "tag=v$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_OUTPUT"
+
       - name: Commit and push updated dist/
         if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/
-          git commit -m "chore: rebuild merged rule-sets [skip ci]
+          git commit -m "chore: rebuild merged rule-sets
 
           $(cat dist/manifest.json | python3 -c "
           import sys, json
@@ -73,6 +79,41 @@ jobs:
               print(f\"  {cat}: {info['rule_count']} rules from {inc} sources ({fail} failed)\")
           ")"
           git push
+
+      - name: Create release
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+
+          # Build release body from manifest
+          BODY=$(python3 -c "
+          import json
+          m = json.load(open('dist/manifest.json'))
+          lines = []
+          lines.append(f\"**sing-box version:** {m['sing_box_version']}\")
+          lines.append('')
+          for cat, info in sorted(m['categories'].items()):
+              inc = sorted(info['included_sources'])
+              fail = info['failed_sources']
+              lines.append(f'### {cat}')
+              lines.append(f'**{info[\"rule_count\"]}** rules from **{len(inc)}** sources')
+              lines.append('')
+              lines.append('Included: ' + ', '.join(f'\`{s}\`' for s in inc))
+              if fail:
+                  lines.append('')
+                  lines.append('⚠️ Failed: ' + ', '.join(f'\`{f[\"name\"]}\`' for f in fail))
+              lines.append('')
+          print('\n'.join(lines))
+          ")
+
+          gh release create "$TAG" \
+            --title "Rule-sets $TAG" \
+            --notes "$BODY" \
+            dist/geosite-merged.srs \
+            dist/geoip-merged.srs \
+            dist/manifest.json
 
       - name: Job summary
         if: always()
