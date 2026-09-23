@@ -1,6 +1,6 @@
 # Build Report
 
-**Built at:** 2026-09-22T09:08:23Z  
+**Built at:** 2026-09-23T09:09:22Z  
 **sing-box version:** 1.14.1
 
 ## geoip
